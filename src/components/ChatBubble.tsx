@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import ChatText from "../interface/ChatText";
 
 function ReceiverBubble() {
   return (
     <>
-      <LeftBubble>안녕</LeftBubble>
+      <LeftBubble>gg</LeftBubble>
     </>
   );
 }

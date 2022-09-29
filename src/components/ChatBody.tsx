@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ChatText from "../interface/ChatText";
 import { ReceiverBubble, SenderBubble } from "./ChatBubble";
 
 function ChatBody() {
