@@ -1,15 +1,18 @@
 import styled from "styled-components";
-import UserData from "../store/UserData.json";
-import UserProfile from "./UserProfile";
+import UserData from "../../store/UserData.json";
+import UserProfile from "../UserProfile";
 
 function ChatRoomHeader() {
   let userData = UserData.users;
-  console.log(userData);
 
   return (
     <Header>
       {userData.map((user) => (
-        <UserProfile userImage={user.profileImage} userName={user.userName} />
+        <UserProfile
+          userImage={user.profileImage}
+          userName={user.userName}
+          userId={user.userId}
+        />
       ))}
     </Header>
   );

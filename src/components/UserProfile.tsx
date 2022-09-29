@@ -1,15 +1,24 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 function UserProfile({
   userImage,
   userName,
+  userId,
 }: {
   userImage: any;
   userName: string;
+  userId: number;
 }) {
+  const [sender, setSender] = useState(1);
+
+  function onClick() {
+    setSender(userId);
+  }
+
   return (
     <UserContainer>
-      <UserProfileImage src={`img/${userImage}`} />
+      <UserProfileImage src={`img/${userImage}`} onClick={onClick} />
       <UserName>{userName}</UserName>
     </UserContainer>
   );

@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "text": "머해",
+    "user": {
+      "id": 2,
+      "name": "팥쥐",
+      "profileImage": "user2.jpg"
+    }
+  },
+  {
+    "id": 2,
+    "text": "놀쟈",
+    "user": {
+      "id": 2,
+      "name": "팥쥐",
+      "profileImage": "user2.jpg"
+    }
+  },
+  {
+    "id": 3,
+    "text": "구래",
+    "user": {
+      "id": 1,
+      "name": "팥쥐",
+      "profileImage": "user2.jpg"
+    }
+  }
+]

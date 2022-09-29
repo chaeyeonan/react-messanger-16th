@@ -1,6 +1,6 @@
-import ChatBody from "../components/ChatBody";
-import ChatRoomHeader from "../components/ChatRoomHeader";
-import { SendMessage } from "../components/SendMessage";
+import ChatBody from "../components/ChattingRoom/ChatBody";
+import ChatRoomHeader from "../components/ChattingRoom/ChatRoomHeader";
+import { SendMessage } from "../components/ChattingRoom/SendMessage";
 
 function ChatRoom() {
   return (

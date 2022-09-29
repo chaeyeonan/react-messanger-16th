@@ -1,17 +1,22 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import ChatText from "../interface/ChatText";
+import ChatText from "../../interface/ChatText";
 
-let chatting: ChatText;
+//let chatting: ChatText;
 
 function SendMessage() {
   const [value, setValue] = useState("");
   const [text, setText] = useState([]);
 
   function AddText(value: any) {
-    chatting = {
+    /*  chatting = {
+      userId: 1,
+      textId: 0,
+      roomId: 1,
       text: value,
     };
+    console.log(chatting);*/
+    setText(text.concat(value));
   }
 
   function onSend(e: any) {
@@ -53,4 +58,4 @@ const SendButton = styled.button`
   border-width: 0.01rem;
 `;
 
-export { SendMessage, chatting };
+export { SendMessage };
