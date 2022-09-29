@@ -3,13 +3,11 @@
     {
       "userId": 1,
       "userName": "콩쥐",
-      "profileImage1": "https://ibb.co/dsNJs1C",
       "profileImage": "user1.png"
     },
     {
       "userId": 2,
       "userName": "팥쥐",
-      "profileImage1": "https://ibb.co/rF7c9m2",
       "profileImage": "user2.jpg"
     }
   ]

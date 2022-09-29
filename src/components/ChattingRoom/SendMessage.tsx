@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import ChatText from "../../interface/ChatText";
+import useInput from "../../hooks/useInput";
 
 //let chatting: ChatText;
 
 function SendMessage() {
-  const [value, setValue] = useState("");
-  const [text, setText] = useState([]);
+  const { text, handleChange, resetText } = useInput("");
 
-  function AddText(value: any) {
+  function AddText(text: string) {
     /*  chatting = {
       userId: 1,
       textId: 0,
@@ -16,18 +15,19 @@ function SendMessage() {
       text: value,
     };
     console.log(chatting);*/
-    setText(text.concat(value));
+
+    console.log(text);
   }
 
   function onSend(e: any) {
     e.preventDefault();
-    AddText(value);
-    setValue("");
+    AddText(text);
+    resetText();
   }
 
   return (
     <InputContainer onSubmit={onSend}>
-      <Input onChange={(e) => setValue(e.target.value)} value={value} />
+      <Input onChange={handleChange} value={text} />
       <SendButton type="submit">전송</SendButton>
     </InputContainer>
   );
