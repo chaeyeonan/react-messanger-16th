@@ -2,51 +2,75 @@ import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import chat from "../../interface/chat";
 import { currentId } from "../../store/recoil/recoil";
+import { UserProfileImage } from "../UserProfile";
+import UserData from "../../store/UserData.json";
 
 interface bubbleStyle {
   color?: string;
   flexDirection?: string;
 }
 
-function ChatBubble({ chatId, senderId, receiverId, text }: chat) {
+function ChatBubble({ chatId, senderId, receiverId, text, time }: chat) {
   const currentUser = useRecoilState(currentId);
 
   return (
     <>
       {currentUser[0] === senderId ? (
-        <BubbleBox justifyContent="flex-end">
-          <Bubble>{text}</Bubble>
-        </BubbleBox>
+        <BubbleList justifyContent="flex-end">
+          <TimeStyle>{time}</TimeStyle>
+          <div>
+            <UserName>{UserData.users[senderId - 1].userName}</UserName>
+            <Bubble>{text}</Bubble>
+          </div>
+        </BubbleList>
       ) : (
-        <BubbleBox>
-          <Bubble color="#ddd" flexDirection="row">
-            {text}
-          </Bubble>
-        </BubbleBox>
+        <BubbleList>
+          <UserProfileImage
+            src={`img/user${senderId}.png`}
+            width={2}
+            height={2}
+          />
+          <div style={{ marginLeft: "0.3rem" }}>
+            <UserName flex="row">
+              {UserData.users[senderId - 1].userName}
+            </UserName>
+            <Bubble color="#fff" flexDirection="row">
+              {text}
+            </Bubble>
+          </div>
+          <TimeStyle>{time}</TimeStyle>
+        </BubbleList>
       )}
     </>
   );
 }
 
-const BubbleBox = styled.div<{ justifyContent?: string }>`
+const BubbleList = styled.div<{ justifyContent?: string }>`
   display: flex;
-  width: 25rem;
-  height: 2rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
   justify-content: ${(props) => props.justifyContent || "flex-start"};
 `;
 
 const Bubble = styled.div<bubbleStyle>`
   display: flex;
   width: auto;
-  height: 1.2rem;
   border-radius: 0.3rem;
-  background-color: ${(props) => props.color || "#f9eb54"};
+  background-color: ${(props) => props.color || "#dee2e6"};
   font-size: 13px;
   flex-direction: ${(props) => props.flexDirection || "row-reverse"};
-  padding: 10px;
-  margin: 0.5rem;
+  padding: 8px;
 `;
 
-export { ChatBubble };
+const UserName = styled.div<{ flex?: string }>`
+  font-size: 0.5rem;
+  margin-bottom: 0.1rem;
+  display: flex;
+  flex-direction: ${(props) => props.flex || "row-reverse"};
+`;
+
+const TimeStyle = styled.div`
+  font-size: 0.4rem;
+  margin-top: 2rem;
+  padding: 0.3rem;
+`;
+
+export default ChatBubble;

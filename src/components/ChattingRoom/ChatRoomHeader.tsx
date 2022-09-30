@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import UserData from "../../store/UserData.json";
-import UserProfile from "../UserProfile";
+import { UserProfile } from "../UserProfile";
 
 function ChatRoomHeader() {
   let userData = UserData.users;
@@ -22,7 +22,6 @@ const Header = styled.div`
   margin: 0 auto;
   background: #ffffff;
   height: 6rem;
-  width: 26rem;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
   display: flex;
   flex-direction: row;
