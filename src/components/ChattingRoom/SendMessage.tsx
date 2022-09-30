@@ -1,11 +1,25 @@
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import useInput from "../../hooks/useInput";
+import chat from "../../interface/chat";
+import { chatList, currentId } from "../../store/recoil/recoil";
 
 function SendMessage() {
   const { text, handleChange, resetText } = useInput("");
+  const [chatting, setChatting] = useRecoilState(chatList);
+  const sender = useRecoilState(currentId)[0];
+
+  const newChat: chat = {
+    chatId: Date.now(),
+    senderId: sender,
+    receiverId: sender === 1 ? 2 : 1,
+    text: text,
+  };
 
   function AddText(text: string) {
-    console.log(text);
+    if (text.trim()) {
+      setChatting(chatting.concat(newChat));
+    }
   }
 
   function onSend(e: any) {
