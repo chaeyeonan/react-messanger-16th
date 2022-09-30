@@ -1,21 +1,10 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
 import useInput from "../../hooks/useInput";
-
-//let chatting: ChatText;
 
 function SendMessage() {
   const { text, handleChange, resetText } = useInput("");
 
   function AddText(text: string) {
-    /*  chatting = {
-      userId: 1,
-      textId: 0,
-      roomId: 1,
-      text: value,
-    };
-    console.log(chatting);*/
-
     console.log(text);
   }
 

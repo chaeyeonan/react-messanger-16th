@@ -1,29 +1,20 @@
 [
   {
-    "id": 1,
-    "text": "머해",
-    "user": {
-      "id": 2,
-      "name": "팥쥐",
-      "profileImage": "user2.jpg"
-    }
+    "chatId": 1,
+    "senderId": 1,
+    "receiverId": 2,
+    "text": "머해"
   },
   {
-    "id": 2,
-    "text": "놀쟈",
-    "user": {
-      "id": 2,
-      "name": "팥쥐",
-      "profileImage": "user2.jpg"
-    }
+    "chatId": 2,
+    "senderId": 1,
+    "receiverId": 2,
+    "text": "놀쟈"
   },
   {
-    "id": 3,
-    "text": "구래",
-    "user": {
-      "id": 1,
-      "name": "팥쥐",
-      "profileImage": "user2.jpg"
-    }
+    "chatId": 3,
+    "senderId": 2,
+    "receiverId": 1,
+    "text": "구래"
   }
 ]
