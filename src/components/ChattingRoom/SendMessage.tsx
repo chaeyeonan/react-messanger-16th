@@ -9,11 +9,14 @@ function SendMessage() {
   const [chatting, setChatting] = useRecoilState(chatList);
   const sender = useRecoilState(currentId)[0];
 
+  const time = new Date();
+
   const newChat: chat = {
     chatId: Date.now(),
     senderId: sender,
     receiverId: sender === 1 ? 2 : 1,
     text: text,
+    time: time.getHours() + ":" + time.getMinutes(),
   };
 
   function AddText(text: string) {
@@ -40,25 +43,24 @@ const InputContainer = styled.form`
   margin: 0 auto;
   background: #ffffff;
   height: 5rem;
-  width: 26rem;
   border-radius: 0rem 0rem 0.5rem 0.5rem;
   display: flex;
   flex-direction: "row";
 `;
 
 const Input = styled.input`
-  width: 18.8rem;
+  width: 18rem;
   margin: 0.5rem;
   height: 3.5rem;
   border: none;
 `;
 
 const SendButton = styled.button`
-  width: 5rem;
+  width: 4rem;
   height: 3.7rem;
   margin-top: 0.5rem;
   background-color: #f9eb54;
-  border-width: 0.01rem;
+  border: none;
 `;
 
 export { SendMessage };

@@ -3,18 +3,21 @@
     "chatId": 1,
     "senderId": 2,
     "receiverId": 1,
-    "text": "머해"
+    "text": "머해",
+    "time": "11:24"
   },
   {
     "chatId": 2,
     "senderId": 2,
     "receiverId": 1,
-    "text": "놀쟈"
+    "text": "놀쟈",
+    "time": "11:24"
   },
   {
     "chatId": 3,
     "senderId": 1,
     "receiverId": 2,
-    "text": "구래"
+    "text": "구래",
+    "time": "11:28"
   }
 ]

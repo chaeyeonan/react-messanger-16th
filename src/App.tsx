@@ -14,7 +14,7 @@ const Container = styled.div`
   margin: 0 auto;
   margin-top: 2rem;
   border-radius: 0.5rem;
-  width: 26rem;
+  width: 24rem;
 `;
 
 export default App;

@@ -3,12 +3,12 @@
     {
       "userId": 1,
       "userName": "콩쥐",
-      "profileImage": "user1.png"
+      "profileImage": "user1"
     },
     {
       "userId": 2,
       "userName": "팥쥐",
-      "profileImage": "user2.jpg"
+      "profileImage": "user2"
     }
   ]
 }

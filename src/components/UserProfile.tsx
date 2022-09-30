@@ -1,7 +1,12 @@
-import { useState } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import { currentId } from "../store/recoil/recoil";
+
+interface imageStyle {
+  brightness?: string;
+  width?: number;
+  height?: number;
+}
 
 function UserProfile({
   userImage,
@@ -9,7 +14,7 @@ function UserProfile({
   userId,
 }: {
   userImage: any;
-  userName: string;
+  userName?: string;
   userId: number;
 }) {
   const [sender, setSender] = useRecoilState(currentId);
@@ -23,7 +28,7 @@ function UserProfile({
       {userId === sender ? (
         <>
           <UserProfileImage
-            src={`img/${userImage}`}
+            src={`img/${userImage}.png`}
             brightness="brightness(50%)"
           />
           <div
@@ -40,7 +45,7 @@ function UserProfile({
           </div>
         </>
       ) : (
-        <UserProfileImage src={`img/${userImage}`} onClick={onClick} />
+        <UserProfileImage src={`img/${userImage}.png`} onClick={onClick} />
       )}
       <UserName>{userName}</UserName>
     </UserContainer>
@@ -55,9 +60,9 @@ const UserContainer = styled.div`
   margin-left: 1rem;
 `;
 
-const UserProfileImage = styled.img<{ brightness?: string }>`
-  width: 3rem;
-  height: 3rem;
+const UserProfileImage = styled.img<imageStyle>`
+  width: ${(props) => props.width || 3}rem;
+  height: ${(props) => props.height || 3}rem;
   border-radius: 1rem;
   border-width: 0.3rem;
   filter: ${(props) => props.brightness || "brightness(100%)"};
@@ -77,4 +82,4 @@ font-size: "0.7rem",
 margin: "0.5rem",
 `;
 
-export default UserProfile;
+export { UserProfile, UserProfileImage };
