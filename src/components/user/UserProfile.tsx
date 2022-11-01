@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { currentId } from "../store/recoil/recoil";
+import { currentId } from "../../store/recoil/recoil";
 
 interface imageStyle {
   brightness?: string;

@@ -6,4 +6,11 @@ interface chat {
   time: string;
 }
 
-export default chat;
+interface profile {
+  userID: number;
+  profileImg: string;
+  name: string;
+  PersonalMessage: string;
+}
+
+export type { chat, profile };

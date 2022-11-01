@@ -1,7 +1,7 @@
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import useInput from "../../hooks/useInput";
-import chat from "../../interface/chat";
+import { chat } from "../../interface/chat";
 import { chatList, currentId } from "../../store/recoil/recoil";
 
 function SendMessage() {

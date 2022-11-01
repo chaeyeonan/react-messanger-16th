@@ -1,14 +1,28 @@
 {
   "users": [
     {
+      "userId": 0,
+      "userName": "안채연",
+      "profileImage": "user1",
+      "personalMessage": "내가 주인이다"
+    },
+    {
       "userId": 1,
       "userName": "콩쥐",
-      "profileImage": "user1"
+      "profileImage": "user1",
+      "personalMessage": ""
     },
     {
       "userId": 2,
       "userName": "팥쥐",
-      "profileImage": "user2"
+      "profileImage": "user2",
+      "personalMessage": "나는 팥쥐"
+    },
+    {
+      "userId": 3,
+      "userName": "계모",
+      "profileImage": "user2",
+      "personalMessage": "나는 계모"
     }
   ]
 }

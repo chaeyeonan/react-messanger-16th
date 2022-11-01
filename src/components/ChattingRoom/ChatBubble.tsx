@@ -1,8 +1,8 @@
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import chat from "../../interface/chat";
+import { chat } from "../../interface/chat";
 import { currentId } from "../../store/recoil/recoil";
-import { UserProfileImage } from "../UserProfile";
+import { UserProfileImage } from "../user/UserProfile";
 import UserData from "../../store/UserData.json";
 
 interface bubbleStyle {

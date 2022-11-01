@@ -8,21 +8,21 @@ const Navigation = () => {
     <Nav>
       <IconWrap>
         <Link to="/">
-          {pathname == "/" ? (
+          {pathname === "/" ? (
             <Icon src="img/full_profile.png" />
           ) : (
             <Icon src="img/profile.png" />
           )}
         </Link>
         <Link to="/Chat">
-          {pathname == "/Chat" ? (
+          {pathname === "/Chat" ? (
             <Icon src="img/full_chat.png" />
           ) : (
             <Icon src="img/chat.png" />
           )}
         </Link>
         <Link to="/Setting">
-          {pathname == "/Setting" ? (
+          {pathname === "/Setting" ? (
             <Icon src="img/full_setting.png" />
           ) : (
             <Icon src="img/setting.png" />

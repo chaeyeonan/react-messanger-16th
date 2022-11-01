@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import UserData from "../../store/UserData.json";
-import { UserProfile } from "../UserProfile";
+import { UserProfile } from "../user/UserProfile";
 
 function ChatRoomHeader() {
   let userData = UserData.users;
