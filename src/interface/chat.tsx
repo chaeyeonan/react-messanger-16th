@@ -13,4 +13,9 @@ interface profile {
   PersonalMessage: string;
 }
 
-export type { chat, profile };
+interface chatRoom {
+  roomId: number;
+  chat: chat[];
+}
+
+export type { chat, profile, chatRoom };

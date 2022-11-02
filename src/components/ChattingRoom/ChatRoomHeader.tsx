@@ -1,19 +1,29 @@
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
+import { roomId } from "../../store/recoil/recoil";
 import UserData from "../../store/UserData.json";
-import { UserProfile } from "../user/UserProfile";
+import { UserProfile } from "../profile/UserProfile";
 
 function ChatRoomHeader() {
   let userData = UserData.users;
+  let room = useRecoilValue(roomId);
+  // const newUserData = UserData.users.filter((user) => {
+  //   user.userId === 0 || user.userId === room;
+  // });
 
   return (
     <Header>
-      {userData.map((user) => (
-        <UserProfile
-          userImage={user.profileImage}
-          userName={user.userName}
-          userId={user.userId}
-        />
-      ))}
+      {userData.map((user) =>
+        user.userId === 0 || user.userId === room ? (
+          <UserProfile
+            userImage={user.profileImage}
+            userName={user.userName}
+            userId={user.userId}
+          />
+        ) : (
+          <></>
+        )
+      )}
     </Header>
   );
 }

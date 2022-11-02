@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Navigation from "../components/Navi";
-import FriendsProfile from "../components/user/FriendsProfile";
+import FriendsProfile from "../components/profile/FriendsProfile";
 import UserData from "../store/UserData.json";
 
 interface DivStyle {
