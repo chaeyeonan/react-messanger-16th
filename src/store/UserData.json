@@ -2,27 +2,27 @@
   "users": [
     {
       "userId": 0,
-      "userName": "안채연",
-      "profileImage": "user1",
+      "userName": "마이구미포포",
+      "profileImage": "user0",
       "personalMessage": "내가 주인이다"
     },
     {
       "userId": 1,
-      "userName": "콩쥐",
+      "userName": "곰표",
       "profileImage": "user1",
-      "personalMessage": ""
+      "personalMessage": "부캐 김딸기"
     },
     {
       "userId": 2,
-      "userName": "팥쥐",
+      "userName": "외국인",
       "profileImage": "user2",
-      "personalMessage": "나는 팥쥐"
+      "personalMessage": "hello~"
     },
     {
       "userId": 3,
-      "userName": "계모",
-      "profileImage": "user2",
-      "personalMessage": "나는 계모"
+      "userName": "승승장구",
+      "profileImage": "user3",
+      "personalMessage": ""
     }
   ]
 }

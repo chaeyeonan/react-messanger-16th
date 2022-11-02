@@ -1,13 +1,20 @@
 import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
 import useInput from "../../hooks/useInput";
+import { useState } from "react";
 import { chat, chatRoom } from "../../interface/chat";
-import { chatList, currentId, roomId } from "../../store/recoil/recoil";
+import {
+  chatList,
+  chattingRoom,
+  currentId,
+  roomId,
+} from "../../store/recoil/recoil";
 
 function SendMessage() {
   const { text, handleChange, resetText } = useInput("");
   const room = useRecoilValue(roomId);
   const [chatting, setChatting] = useRecoilState(chatList);
+  const getChatting = useRecoilValue(chattingRoom);
   const sender = useRecoilValue(currentId);
   const time = new Date();
 
@@ -15,18 +22,21 @@ function SendMessage() {
     chatId: Date.now(),
     senderId: sender,
     receiverId: sender === 0 ? room : 0,
-    text: text,
+    text: "dvavd", //text,
     time: time.getHours() + ":" + time.getMinutes(),
   };
 
-  //const newChatting: chatRoom = { roomId: room, chat: [newChat] };
+  const newChatting: chatRoom = { roomId: room, chat: [newChat] };
 
+  let copy = [...getChatting];
   function AddText(text: string) {
     if (text.trim()) {
+      copy[0].chat.concat(newChat);
+
       //setChatting(chatting[room - 1].chat.concat(newChat));
-      //setChatting(chatting.concat(newChatting));
     }
   }
+  console.log(copy[0].chat);
 
   function onSend(e: any) {
     e.preventDefault();
