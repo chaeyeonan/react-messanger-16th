@@ -1,6 +1,5 @@
-import console from "console";
 import { Link } from "react-router-dom";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import ChatListItem from "../components/ChatLIstItem";
 import Navigation from "../components/Navi";

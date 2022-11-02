@@ -1,5 +1,7 @@
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
 import { profile } from "../interface/chat";
+import { chatList, chattingRoom, roomId } from "../store/recoil/recoil";
 
 const ChatListItem = ({
   userID,
@@ -7,13 +9,21 @@ const ChatListItem = ({
   name,
   PersonalMessage,
 }: profile) => {
+  const chatting = useRecoilValue(chatList);
+  const getChatting = useRecoilValue(chattingRoom);
+
+  let lastChatIndex = getChatting[0].chat.length - 1;
+  let lastChat = chatting[userID - 1].chat[lastChatIndex].text;
+  let lastChatTime = chatting[userID - 1].chat[lastChatIndex].time;
+
   return (
     <ProfileContainer>
       <>
         <ProfileImg src={`/img/${profileImg}.png`} />
         <NameWrap>
           <Name>{name}</Name>
-          <PersonalMsg>{PersonalMessage}</PersonalMsg>
+          <PersonalMsg>{lastChat}</PersonalMsg>
+          <Time>{lastChatTime}</Time>
         </NameWrap>
       </>
     </ProfileContainer>
@@ -39,12 +49,19 @@ const NameWrap = styled.div`
   padding: 7px;
 `;
 const Name = styled.div`
-  font-size: 14px;
+  font-size: 13px;
   padding-bottom: 3px;
 `;
 const PersonalMsg = styled.div`
-  color: #7d7d7d;
-  font-size: 11px;
+  color: gray;
+  font-size: 10px;
+`;
+const Time = styled.div`
+  color: lightgray;
+  font-size: 7px;
+  position: absolute;
+  right: 5.5rem;
+  padding-bottom: 1rem;
 `;
 
 export default ChatListItem;
