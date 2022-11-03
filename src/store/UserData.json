@@ -2,7 +2,7 @@
   "users": [
     {
       "userId": 0,
-      "userName": "마이구미포포",
+      "userName": "포포",
       "profileImage": "user0",
       "personalMessage": "내가 주인이다"
     },
@@ -22,6 +22,18 @@
       "userId": 3,
       "userName": "승승장구",
       "profileImage": "user3",
+      "personalMessage": ""
+    },
+    {
+      "userId": 4,
+      "userName": "반박시.박시현",
+      "profileImage": "user4",
+      "personalMessage": "반박하지마"
+    },
+    {
+      "userId": 5,
+      "userName": "김보드라",
+      "profileImage": "user5",
       "personalMessage": ""
     }
   ]
