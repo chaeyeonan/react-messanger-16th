@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
-import { chat } from "../../interface/chat";
+import { chat } from "../../interface/interface";
 import { chatList, roomId } from "../../store/recoil/recoil";
 import ChatBubble from "./ChatBubble";
 

@@ -1,8 +1,6 @@
-import { useRecoilValue } from "recoil";
 import ChatBody from "../components/ChattingRoom/ChatBody";
 import ChatRoomHeader from "../components/ChattingRoom/ChatRoomHeader";
-import { SendMessage } from "../components/ChattingRoom/SendMessage";
-import { roomId } from "../store/recoil/recoil";
+import SendMessage from "../components/ChattingRoom/SendMessage";
 
 const ChatRoom = () => {
   return (

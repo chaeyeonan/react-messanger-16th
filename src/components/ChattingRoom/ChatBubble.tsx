@@ -1,9 +1,9 @@
 import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
-import { chat } from "../../interface/chat";
+import { chat } from "../../interface/interface";
 import { currentId } from "../../store/recoil/recoil";
-import { UserProfileImage } from "../profile/UserProfile";
 import UserData from "../../store/UserData.json";
+import { UserProfileImage } from "../style";
 
 interface bubbleStyle {
   color?: string;

@@ -3,7 +3,7 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
 import { currentId, roomId } from "../../store/recoil/recoil";
 import UserData from "../../store/UserData.json";
-import { UserProfile } from "../profile/UserProfile";
+import UserProfile from "../profile/HedaerProfile";
 
 function ChatRoomHeader() {
   let userData = UserData.users;
@@ -35,6 +35,7 @@ function ChatRoomHeader() {
 }
 
 const Header = styled.div`
+  position: relative;
   margin: 0 auto;
   background: #ffffff;
   height: 6rem;
@@ -44,11 +45,11 @@ const Header = styled.div`
 `;
 const CloseBtn = styled.div`
   position: absolute;
-  right: 5rem;
-  top: 3rem;
+  right: 1rem;
+  top: 1rem;
   width: 1rem;
   height: 1rem;
-  background: red;
+  background: #fa5858;
   border-radius: 1rem;
 `;
 

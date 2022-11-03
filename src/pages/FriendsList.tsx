@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import Navigation from "../components/Navi";
-import FriendsProfile from "../components/profile/FriendsProfile";
+import FriendsProfile from "../components/list/FriendsProfile";
 import useInput from "../hooks/useInput";
 import { roomId } from "../store/recoil/recoil";
 import UserData from "../store/UserData.json";
+import { Container, ListWrap, StyledLink } from "../components/style";
 
 interface DivStyle {
   color?: string;
@@ -25,7 +25,7 @@ const FriendsList = () => {
   return (
     <Container>
       <Navigation />
-      <FriendListWrap>
+      <ListWrap>
         <>
           <Div font={1}>친구</Div>
           <Search
@@ -92,21 +92,10 @@ const FriendsList = () => {
             </>
           )}
         </>
-      </FriendListWrap>
+      </ListWrap>
     </Container>
   );
 };
-
-const Container = styled.div`
-  display: flex;
-  position: relative;
-`;
-
-const FriendListWrap = styled.div`
-  box-sizing: border-box;
-  padding: 1rem;
-  width: 18.5rem;
-`;
 
 const Div = styled.div<DivStyle>`
   color: ${(props) => props.color || "#000"};
@@ -123,16 +112,10 @@ const Search = styled.img`
   right: 1rem;
   top: 1.1rem;
 `;
-
 const Input = styled.input`
   width: 100%;
-  margin-top: 1.5rem;
+  margin: 1.5rem 0;
   background: #f2f2f2;
-`;
-
-const StyledLink = styled(Link)`
-  textdecoration: none;
-  color: #000;
 `;
 
 export default FriendsList;

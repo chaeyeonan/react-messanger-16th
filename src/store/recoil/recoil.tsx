@@ -1,6 +1,6 @@
 import { atom, selector } from "recoil";
 import Message from "../Message.json";
-import { chat, chatRoom } from "../../interface/chat";
+import { chat, chatRoom } from "../../interface/interface";
 
 export const currentId = atom<number>({
   key: "currentId",

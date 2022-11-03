@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import styled from "styled-components";
-import ChatListItem from "../components/ChatLIstItem";
+import ChatListItem from "../components/list/ChatLIstItem";
 import Navigation from "../components/Navi";
-import { roomId } from "../store/recoil/recoil";
+import { Container, ListDiv, ListWrap, StyledLink } from "../components/style";
+import { currentId, roomId } from "../store/recoil/recoil";
 import UserData from "../store/UserData.json";
 
 const ChatList = () => {
@@ -13,11 +12,11 @@ const ChatList = () => {
   return (
     <Container>
       <Navigation />
-      <ChatListWrap>
-        <Div>채팅</Div>
+      <ListWrap>
+        <ListDiv>채팅</ListDiv>
         {userData.map((people) =>
           people.userId != 0 ? (
-            <Link
+            <StyledLink
               to="/ChatRoom"
               style={{ textDecoration: "none", color: "#000" }}
               state={{ room: people.userId }}
@@ -26,34 +25,20 @@ const ChatList = () => {
               }}
             >
               <ChatListItem
+                key={people.userId}
                 userID={people.userId}
                 profileImg={people.profileImage}
                 name={people.userName}
                 PersonalMessage={people.personalMessage}
               />
-            </Link>
+            </StyledLink>
           ) : (
             <></>
           )
         )}
-      </ChatListWrap>
+      </ListWrap>
     </Container>
   );
 };
-
-const Container = styled.div`
-  display: flex;
-`;
-
-const ChatListWrap = styled.div`
-  box-sizing: border-box;
-  padding: 15px;
-`;
-
-const Div = styled.div`
-  font-weight: bold;
-  font-size: 1rem;
-  padding-bottom: 1rem;
-`;
 
 export default ChatList;

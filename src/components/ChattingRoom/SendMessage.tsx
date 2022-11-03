@@ -1,7 +1,7 @@
 import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
 import useInput from "../../hooks/useInput";
-import { chat, chatRoom } from "../../interface/chat";
+import { chat, chatRoom } from "../../interface/interface";
 import {
   chatList,
   chattingRoom,
@@ -76,4 +76,4 @@ const SendButton = styled.button`
   border: none;
 `;
 
-export { SendMessage };
+export default SendMessage;
