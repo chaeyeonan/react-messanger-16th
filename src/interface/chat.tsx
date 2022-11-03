@@ -6,4 +6,16 @@ interface chat {
   time: string;
 }
 
-export default chat;
+interface profile {
+  userID: number;
+  profileImg: string;
+  name: string;
+  PersonalMessage: string;
+}
+
+interface chatRoom {
+  roomId: number;
+  chat: chat[];
+}
+
+export type { chat, profile, chatRoom };

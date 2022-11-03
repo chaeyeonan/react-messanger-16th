@@ -1,8 +1,8 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
-import chat from "../../interface/chat";
+import { chat } from "../../interface/chat";
 import { currentId } from "../../store/recoil/recoil";
-import { UserProfileImage } from "../UserProfile";
+import { UserProfileImage } from "../profile/UserProfile";
 import UserData from "../../store/UserData.json";
 
 interface bubbleStyle {
@@ -11,15 +11,15 @@ interface bubbleStyle {
 }
 
 function ChatBubble({ chatId, senderId, receiverId, text, time }: chat) {
-  const currentUser = useRecoilState(currentId);
+  const currentUser = useRecoilValue(currentId);
 
   return (
     <>
-      {currentUser[0] === senderId ? (
+      {currentUser === senderId ? (
         <BubbleList justifyContent="flex-end">
           <TimeStyle>{time}</TimeStyle>
           <div>
-            <UserName>{UserData.users[senderId - 1].userName}</UserName>
+            <UserName>{UserData.users[senderId].userName}</UserName>
             <Bubble>{text}</Bubble>
           </div>
         </BubbleList>
@@ -31,9 +31,7 @@ function ChatBubble({ chatId, senderId, receiverId, text, time }: chat) {
             height={2}
           />
           <div style={{ marginLeft: "0.3rem" }}>
-            <UserName flex="row">
-              {UserData.users[senderId - 1].userName}
-            </UserName>
+            <UserName flex="row">{UserData.users[senderId].userName}</UserName>
             <Bubble color="#fff" flexDirection="row">
               {text}
             </Bubble>

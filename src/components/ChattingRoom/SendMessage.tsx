@@ -1,27 +1,40 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
 import useInput from "../../hooks/useInput";
-import chat from "../../interface/chat";
-import { chatList, currentId } from "../../store/recoil/recoil";
+import { chat, chatRoom } from "../../interface/chat";
+import {
+  chatList,
+  chattingRoom,
+  currentId,
+  roomId,
+} from "../../store/recoil/recoil";
 
 function SendMessage() {
   const { text, handleChange, resetText } = useInput("");
+  const room = useRecoilValue(roomId);
   const [chatting, setChatting] = useRecoilState(chatList);
-  const sender = useRecoilState(currentId)[0];
-
+  const getChatting = useRecoilValue(chattingRoom);
+  const sender = useRecoilValue(currentId);
   const time = new Date();
 
   const newChat: chat = {
     chatId: Date.now(),
     senderId: sender,
-    receiverId: sender === 1 ? 2 : 1,
+    receiverId: sender === 0 ? room : 0,
     text: text,
     time: time.getHours() + ":" + time.getMinutes(),
   };
 
+  const newChatting: chatRoom = {
+    roomId: room,
+    chat: [...getChatting[0].chat, newChat],
+  };
+
   function AddText(text: string) {
     if (text.trim()) {
-      setChatting(chatting.concat(newChat));
+      setChatting(
+        chatting.map((chat) => (chat.roomId === room ? newChatting : chat))
+      );
     }
   }
 

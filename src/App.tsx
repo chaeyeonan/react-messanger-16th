@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import FriendsList from "./pages/FriendsList";
 import ChatList from "./pages/ChatList";
 import Setting from "./pages/Setting";
+import ChatRoom from "./pages/ChatRoom";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/*" element={<FriendsList />} />
         <Route path="/Chat" element={<ChatList />} />
         <Route path="/Setting" element={<Setting />} />
+        <Route path="/ChatRoom" element={<ChatRoom />} />
       </Routes>
     </Container>
   );

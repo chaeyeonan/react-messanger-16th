@@ -1,12 +1,13 @@
 import { useRef, useEffect } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
-import chat from "../../interface/chat";
-import { chatList } from "../../store/recoil/recoil";
+import { chat } from "../../interface/chat";
+import { chatList, roomId } from "../../store/recoil/recoil";
 import ChatBubble from "./ChatBubble";
 
 function ChatBody() {
-  const chatting = useRecoilState(chatList);
+  const room = useRecoilValue(roomId);
+  const chatting = useRecoilValue(chatList);
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -22,7 +23,7 @@ function ChatBody() {
 
   return (
     <ChatBodyContainer ref={scrollRef}>
-      {chatting[0].map((chat: chat) => (
+      {chatting[room - 1].chat.map((chat: chat) => (
         <ChatBubble
           chatId={chat.chatId}
           senderId={chat.senderId}

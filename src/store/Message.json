@@ -1,23 +1,80 @@
 [
   {
-    "chatId": 1,
-    "senderId": 2,
-    "receiverId": 1,
-    "text": "머해",
-    "time": "11:24"
+    "roomId": 1,
+    "chat": [
+      {
+        "chatId": 1,
+        "senderId": 0,
+        "receiverId": 1,
+        "text": "오잉.................",
+        "time": "11:24"
+      },
+      {
+        "chatId": 2,
+        "senderId": 1,
+        "receiverId": 0,
+        "text": "놀쟈",
+        "time": "11:24"
+      },
+      {
+        "chatId": 3,
+        "senderId": 0,
+        "receiverId": 1,
+        "text": "구래",
+        "time": "11:28"
+      }
+    ]
   },
   {
-    "chatId": 2,
-    "senderId": 2,
-    "receiverId": 1,
-    "text": "놀쟈",
-    "time": "11:24"
+    "roomId": 2,
+    "chat": [
+      {
+        "chatId": 1,
+        "senderId": 2,
+        "receiverId": 0,
+        "text": "바보",
+        "time": "11:24"
+      },
+      {
+        "chatId": 2,
+        "senderId": 0,
+        "receiverId": 2,
+        "text": "너 지금 바보라햇냐?",
+        "time": "11:24"
+      },
+      {
+        "chatId": 3,
+        "senderId": 2,
+        "receiverId": 0,
+        "text": "그랬다",
+        "time": "11:28"
+      }
+    ]
   },
   {
-    "chatId": 3,
-    "senderId": 1,
-    "receiverId": 2,
-    "text": "구래",
-    "time": "11:28"
+    "roomId": 3,
+    "chat": [
+      {
+        "chatId": 1,
+        "senderId": 3,
+        "receiverId": 0,
+        "text": "멍청이",
+        "time": "11:24"
+      },
+      {
+        "chatId": 2,
+        "senderId": 0,
+        "receiverId": 3,
+        "text": "너 지금 그게 할말이니?",
+        "time": "11:24"
+      },
+      {
+        "chatId": 3,
+        "senderId": 3,
+        "receiverId": 0,
+        "text": "내가 뭐 못할말했니?",
+        "time": "11:28"
+      }
+    ]
   }
 ]
