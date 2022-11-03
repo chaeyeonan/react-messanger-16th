@@ -6,7 +6,13 @@ const Setting = () => {
     <Container>
       <Navigation />
       <SettingWrap>
-        <Div>Setting</Div>
+        <Div>더보기</Div>
+        <Div onClick={() => window.open("https://github.com/chaeyeonan")}>
+          GitHub
+        </Div>
+        <Div onClick={() => window.open("https://12yeonii.tistory.com/")}>
+          Tistory
+        </Div>
       </SettingWrap>
     </Container>
   );
@@ -22,7 +28,9 @@ const SettingWrap = styled.div`
 `;
 
 const Div = styled.div`
-  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  padding-bottom: 1rem;
 `;
 
 export default Setting;
