@@ -22,7 +22,7 @@ function SendMessage() {
     senderId: sender,
     receiverId: sender === 0 ? room : 0,
     text: text,
-    time: time.getHours() + ":" + time.getMinutes(),
+    time: ("0" + time.getHours()).slice(-2) + ":" + time.getMinutes(),
   };
 
   const newChatting: chatRoom = {
