@@ -19,6 +19,7 @@ function ChatRoomHeader() {
       {userData.map((user) =>
         user.userId === 0 || user.userId === room ? (
           <UserProfile
+            key={user.userId}
             userImage={user.profileImage}
             userName={user.userName}
             userId={user.userId}

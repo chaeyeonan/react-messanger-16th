@@ -45,7 +45,8 @@ function ChatBubble({ chatId, senderId, receiverId, text, time }: chat) {
 
 const BubbleList = styled.div<{ justifyContent?: string }>`
   display: flex;
-  justify-content: ${(props) => props.justifyContent || "flex-start"};
+  justify-content: ${((props) => props.justifyContent) || "flex-start"};
+  // justify-content: ${({ justifyContent }) => justifyContent || "flex-start"};
 `;
 
 const Bubble = styled.div<bubbleStyle>`

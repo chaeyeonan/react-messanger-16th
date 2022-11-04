@@ -82,6 +82,7 @@ const FriendsList = () => {
                   }}
                 >
                   <FriendsProfile
+                    key={people.userId}
                     userID={people.userId}
                     profileImg={people.profileImage}
                     name={people.userName}

@@ -25,6 +25,7 @@ function ChatBody() {
     <ChatBodyContainer ref={scrollRef}>
       {chatting[room - 1].chat.map((chat: chat) => (
         <ChatBubble
+          key={chat.chatId}
           chatId={chat.chatId}
           senderId={chat.senderId}
           receiverId={chat.receiverId}
