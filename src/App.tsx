@@ -4,12 +4,14 @@ import FriendsList from "./pages/FriendsList";
 import ChatList from "./pages/ChatList";
 import Setting from "./pages/Setting";
 import ChatRoom from "./pages/ChatRoom";
+import InitialPage from "./pages/InitialPage";
 
 function App() {
   return (
     <Container>
       <Routes>
-        <Route path="/*" element={<FriendsList />} />
+        <Route path="/*" element={<InitialPage />} />
+        <Route path="/FriendsList" element={<FriendsList />} />
         <Route path="/Chat" element={<ChatList />} />
         <Route path="/Setting" element={<Setting />} />
         <Route path="/ChatRoom" element={<ChatRoom />} />

@@ -7,8 +7,8 @@ const Navigation = () => {
   return (
     <Nav>
       <IconWrap>
-        <Link to="/">
-          {pathname === "/" ? (
+        <Link to="/FriendsList">
+          {pathname === "/FriendsList" ? (
             <Icon src="img/full_profile.png" />
           ) : (
             <Icon src="img/profile.png" />
